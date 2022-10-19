@@ -3,12 +3,6 @@
 #- name: Install Java 1.8
 #  apt: name=openjdk-8-jdk
 
-- name: download artifact
-  get_url:
-    url: http://15.207.111.217:8082/artifactory/maven-local/sparkjava-hello-world-1.0.war
-    dest: .
-    url_username: admin
-    url_password: {{ secret }}
 # Adding the group tomcat
 - name: add group "tomcat"
   group: name=tomcat
@@ -50,6 +44,13 @@
     src: templates/tomcat.service.j2
     dest: /etc/systemd/system/tomcat.service
   when: ansible_service_mgr == "systems"
+  
+- name: Download artifact
+  get_url:
+    url: http://15.207.111.217:8082/artifactory/maven-local/sparkjava-hello-world-1.0.war
+    dest: /usr/share/tomcat/webapps/
+    url_username: admin
+    url_password: {{ secret }}
 
 # Starting and Enabling the tomcat service on the destination node.
 - name: Start and enable tomcat
