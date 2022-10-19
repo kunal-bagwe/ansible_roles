@@ -1,4 +1,5 @@
 - name: Tomcat deployment playbook
+  hosts: all
   become: True
   roles:
     - tomcat
