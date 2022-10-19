@@ -50,7 +50,7 @@
     url: http://15.207.111.217:8082/artifactory/maven-local/sparkjava-hello-world-1.0.war
     dest: /usr/share/tomcat/webapps/
     url_username: admin
-    url_password: {{ secret }}
+    url_password: "{{ secret }}"
 
 # Starting and Enabling the tomcat service on the destination node.
 - name: Start and enable tomcat
