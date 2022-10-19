@@ -43,7 +43,7 @@
   template:
     src: templates/tomcat.service.j2
     dest: /etc/systemd/system/tomcat.service
-  when: ansible_service_mgr == "systems"
+#  when: ansible_service_mgr == "systems"
   
 - name: Download artifact
   get_url:
@@ -59,5 +59,5 @@
     name: tomcat
     state: started
     enabled: yes
-  when: ansible_service_mgr == "systemd"
+#  when: ansible_service_mgr == "systemd"
 
