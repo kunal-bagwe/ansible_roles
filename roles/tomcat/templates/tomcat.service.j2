@@ -9,12 +9,12 @@ User= {{ tomcat_user }}
 Group= {{ tomcat_group }}
 
 Environment=JAVA_HOME= {{ java_path }}
-Environment=CATALINA_HOME=/usr/share/tomcat
-Environment=CATALINA_BASE=/usr/share/tomcat
-Environment=CATALINA_PID=/usr/share/tomcat/temp/tomcat.pid
+Environment=CATALINA_HOME=/home/ubuntu/tomcat
+Environment=CATALINA_BASE=/home/ubuntu/tomcat
+Environment=CATALINA_PID=/home/ubuntu/tomcat/temp/tomcat.pid
 
-ExecStart=/usr/share/tomcat/bin/startup.sh
-ExecStop=/usr/share/tomcat/bin/shutdown.sh
+ExecStart=/home/ubuntu/tomcat/bin/startup.sh
+ExecStop=/home/ubuntu/tomcat/bin/shutdown.sh
 
 [Install]
 	WantedBy=multi-user.target
