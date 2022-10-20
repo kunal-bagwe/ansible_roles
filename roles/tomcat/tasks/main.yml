@@ -47,7 +47,7 @@
   
 - name: Download artifact
   get_url:
-    url: http://65.2.73.248:8082/artifactory/maven-local/sparkjava-hello-world-1.0.war
+    url: http://43.204.145.54:8082/artifactory/maven-local/sparkjava-hello-world-1.0.war
     dest: /usr/share/tomcat/webapps/
     url_username: admin
     url_password: "{{ secret }}"
